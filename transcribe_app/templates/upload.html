@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta tags for responsiveness and character encoding -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Page Title -->
+	<title>Drag & Drop File Upload</title>
+
+	<!-- Additional head content can be added here (e.g., CSS links) -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+	<!-- Main container for the grid layout -->
+	<div class="grid-container">
+
+		<!-- Grid item for Transcribe functionality -->
+		<div class="grid-item" style="border-right: 2px solid grey;">
+			<h1>TRANSCRIBE</h1>
+			<!-- Transcribe Form -->
+			<form method="post" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<center>
+					<div class="uploader">
+						<!-- Dropzone for file upload -->
+						<div class="dropzone" id="dropzone">Drag & Drop files here or click to upload</div>
+						<!-- File input (hidden) -->
+						<input type="file" name="audio" id="id_audio" accept="audio/*" class="file-upload__input"
+							hidden>
+					</div>
+					<br><br>
+					<!-- Submit button for the form -->
+					<button type="submit" name="action" value="transcribe">Transcribe</button>
+				</center>
+			</form>
+		</div>
+
+		<!-- Grid item for Summarize functionality -->
+		<div class="grid-item" style="border-left: 2px solid grey;">
+			<h1>SUMMARIZE</h1>
+			<!-- Summarize Form -->
+			<form method="post" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<center>
+					<div class="uploader">
+						<!-- Dropzone for file upload -->
+						<div class="dropzone" id="dropzone1">Drag & Drop files here or click to upload</div>
+						<!-- File input (hidden) -->
+						<input type="file" name="text_data" id="id_text_data" accept="text/plain"
+							class="file-upload__input" hidden>
+					</div>
+					<br><br>
+					<!-- Submit button for the form -->
+					<button type="submit" name="action" value="summarize">Summarize</button>
+				</center>
+			</form>
+		</div>
+	</div>
+
+	<!-- jQuery script for additional functionality (if needed) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- Additional scripts can be added here -->
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
