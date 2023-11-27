@@ -20,9 +20,3 @@ List of technical requirements and dependencies.
 Instructions for setting up and running the application.
 Contribution
 Contributions to the Audio Transcriber App are welcome! If you have suggestions or improvements, feel free to fork this repository and submit a pull request.
-
-License
-[Specify the type of license or if it's open-source]
-
-Contact
-For any queries or feedback, please contact [Your Contact Information].
